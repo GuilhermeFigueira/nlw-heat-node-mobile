@@ -1,12 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
 
 import { styles } from "./styles";
+import Header from "../../components/Header";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export function Home() {
 	return (
-		<View style={styles.container}>
-			<Text> Amo penis</Text>
-		</View>
+		<SafeAreaView style={styles.container}>
+			<Header />
+		</SafeAreaView>
 	);
 }
