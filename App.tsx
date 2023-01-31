@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Home } from "./src/screens/Home";
 import {
 	useFonts,
@@ -7,6 +7,7 @@ import {
 } from "@expo-google-fonts/roboto";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,9 +16,7 @@ export default function App() {
 		Roboto_400Regular,
 		Roboto_700Bold,
 	});
-	if (!fontsLoaded) {
-		SplashScreen.hideAsync();
-	}
+	console.log(fontsLoaded);
 
 	return (
 		<>
@@ -26,7 +25,7 @@ export default function App() {
 				translucent
 				backgroundColor="transparent"
 			/>
-			<Home />
+			{fontsLoaded ? <Home /> : !SplashScreen.hideAsync()}
 		</>
 	);
 }
