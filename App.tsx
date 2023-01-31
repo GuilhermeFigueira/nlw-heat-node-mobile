@@ -1,3 +1,4 @@
+import React from "react";
 import { Home } from "./src/screens/Home";
 import {
 	useFonts,
@@ -14,14 +15,17 @@ export default function App() {
 		Roboto_400Regular,
 		Roboto_700Bold,
 	});
-
 	if (!fontsLoaded) {
 		SplashScreen.hideAsync();
 	}
 
 	return (
 		<>
-			<StatusBar style="light" />
+			<StatusBar
+				style="light"
+				translucent
+				backgroundColor="transparent"
+			/>
 			<Home />
 		</>
 	);
