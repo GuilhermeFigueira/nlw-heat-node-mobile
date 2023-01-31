@@ -16,7 +16,6 @@ export default function App() {
 		Roboto_400Regular,
 		Roboto_700Bold,
 	});
-	console.log(fontsLoaded);
 
 	return (
 		<>
