@@ -8,6 +8,7 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { AuthProvider } from "./src/hooks/auth";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -18,13 +19,13 @@ export default function App() {
 	});
 
 	return (
-		<>
+		<AuthProvider>
 			<StatusBar
 				style="light"
 				translucent
 				backgroundColor="transparent"
 			/>
 			{fontsLoaded ? <Home /> : !SplashScreen.hideAsync()}
-		</>
+		</AuthProvider>
 	);
 }
