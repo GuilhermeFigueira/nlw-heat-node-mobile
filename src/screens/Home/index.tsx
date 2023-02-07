@@ -12,7 +12,7 @@ export function Home() {
 		<SafeAreaView style={styles.container}>
 			<Header />
 			<MessageList />
-			<SendMessageForm />
+			<SignInBox />
 		</SafeAreaView>
 	);
 }
