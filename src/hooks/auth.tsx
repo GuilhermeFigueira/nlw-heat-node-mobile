@@ -52,6 +52,8 @@ function AuthProvider({ children }: AuthProviderProps) {
 				code: params.code,
 			});
 			const { user, token } = authResponse.data as AuthResponse;
+
+			api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 		}
 		setIsSingingIn(false);
 	}
